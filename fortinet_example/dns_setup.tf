@@ -1,7 +1,7 @@
 provider "fortios" {
   version = "~> 1.5"
   hostname = "10.1.2.3"
-  token    = "${var.TOKEN}"
+  token    = "var.TOKEN"
   insecure = true
 }
 
