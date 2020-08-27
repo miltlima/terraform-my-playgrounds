@@ -2,6 +2,7 @@ provider "fortios" {
   version = "~> 1.5"
   hostname = "10.1.2.3"
   token    = "${var.TOKEN}"
+  insecure = true
 }
 
 resource "fortios_system_setting_dns" "dnstest" {
@@ -9,7 +10,7 @@ resource "fortios_system_setting_dns" "dnstest" {
   secondary = "8.8.8.8"
 }
 
-resource "fortios_networking_route_static" "dnstest" {
+resource "fortios_networking_route_static" "routetest" {
   dst = "83.25.12.19/32"
   gateway = "1.1.1.1"
   blackhole = "disable"
