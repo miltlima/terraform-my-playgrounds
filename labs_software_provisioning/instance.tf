@@ -16,12 +16,13 @@ resource "aws_instance" "demo_02" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/script.sh",
-      "sudo /tmp/script.sh"
+      "sudo /tmp/script.sh",
     ]
   }
   connection {
-    user     = var.INSTANCE_USERNAME
+    user        = var.INSTANCE_USERNAME
+    type        = "ssh"
     private_key = file(var.PATH_TO_PRIVATE_KEY)
-    host = "self.public_ip"
+    host        = coalesce(self.public_ip, self.private_ip)
   }
 }
