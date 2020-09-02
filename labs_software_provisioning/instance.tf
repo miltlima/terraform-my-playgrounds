@@ -3,7 +3,7 @@ resource "aws_key_pair" "example-key" {
   public_key = file(var.PATH_TO_PUBLIC_KEY)
 }
 
-resource "aws_instance" "demo_02" {
+resource "aws_instance" "server_02" {
   ami           = var.AMIS[var.AWS_REGION]
   instance_type = "t2.micro"
   key_name      = aws_key_pair.example-key.key_name
@@ -18,6 +18,10 @@ resource "aws_instance" "demo_02" {
       "chmod +x /tmp/script.sh",
       "sudo /tmp/script.sh"
     ]
+  }
+
+  provisioner "local-exec" {
+    command = "echo ${aws_instance.server_02.private_ip} >> hosts.txt"
   }
   connection {
     user        = var.INSTANCE_USERNAME
