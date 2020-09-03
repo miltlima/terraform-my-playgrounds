@@ -21,7 +21,7 @@ def create_dir():
             except FileExistsError:
                 print('A pasta já existe')
                 continue
-        os.mkdir(name_dir)
+        # os.mkdir(name_dir)
         print(f"Pasta criada com sucesso {name_dir}")
         break
     return()
