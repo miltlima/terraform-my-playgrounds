@@ -31,6 +31,7 @@ def create_dir():
             break
         return()
 
+
 def create_files():
     dir_list = os.listdir('.')
     print(dir_list)
@@ -38,24 +39,25 @@ def create_files():
     if path in dir_list:
         os.chdir(path)
         print(f"Arquivos atuais do direrório {os.listdir('.')}")
-        terraform_files = [ 'provider.tf','terraform.tfvars', 'backend.tf', 'vars.tf','.gitignore', 'ec2.tf', 'output.tf']
+        terraform_files = ['provider.tf', 'terraform.tfvars', 'backend.tf', 'vars.tf', '.gitignore', 'ec2.tf', 'output.tf']
         default_files = str(input("Deseja criar os arquivos default Terraform para AWS ? "))
         if default_files == "S" or default_files == 's':
             for filename in terraform_files:
-              all = open(filename, 'w+')
+                all = open(filename, 'w+')
         else:
-          print("Opção Invalida")
+            print("Opção Invalida")
     elif path not in dir_list:
-        response = str(input("O Projeto não existe, deseja criar-lo S/N"))
+        response = str(input("O Projeto não existe, deseja criar-lo S/N: "))
         if response == "S" or response == "s":
             create_dir()
         elif response == "N" or response == "n":
-          print('Você optou por não continuar :(')
+            print('Você optou por não continuar :( ')
         else:
             print('Você não informou uma opção valida')
     else:
-      os._exit
+        os._exit
     return()
+
 
 create_dir()
 create_files()
