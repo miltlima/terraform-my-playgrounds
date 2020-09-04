@@ -15,16 +15,38 @@ def create_dir():
         name_dir = str(input("Informe o nome do projeto que deseja criar: "))
         if name_dir == '':
             continue
-        else :
+        else:
             try:
                 os.mkdir(name_dir)
             except FileExistsError:
-                print('A pasta já existe')
+                print('A pasta do projeto já existe')
                 continue
-        # os.mkdir(name_dir)
-        print(f"Pasta criada com sucesso {name_dir}")
-        break
+        print(f"Pasta do projeto criada com sucesso {name_dir}")
+        response = str(input("Deseja criar outro ? S/N ou qualquer tecla para sair: "))
+        if response == "S" or response == "s":
+            create_dir()
+        elif response == "N" or response == "n":
+            break
+        else:
+            break
+        return()
+
+def create_files():
+    dir_list = os.listdir('.')
+    print(dir_list)
+    path = str(input("Informe qual Projeto você deseja criar esses arquivos: "))
+    if path in dir_list:
+        os.chdir(path)
+        print(os.listdir('.'))
+    elif path not in dir_list:
+        response = str(input("O Projeto não existe, deseja criar-lo S/N"))
+        if response == "S" or response == "s":
+            create_dir()
+        else:
+            
+    else:
+      default_files = str(input("Deseja criar os arquivos default Terraform para AWS ? "))
     return()
 
-
 create_dir()
+create_files()
