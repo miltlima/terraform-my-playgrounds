@@ -6,3 +6,4 @@
 * Lab Example simple Instance
 * Lab Example simple provisioning
 * Remote State using S3 Bucket
+* Data source using other regions
