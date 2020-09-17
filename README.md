@@ -7,3 +7,4 @@
 * Lab Example simple provisioning
 * Remote State using S3 Bucket
 * Data source using other regions
+* Labs VPC with NAT on AWS
