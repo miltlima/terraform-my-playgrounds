@@ -1,4 +1,4 @@
-resource "aws" "melebesquet" {
+resource "aws_instance" "melebesquet" {
   ami           = var.AMIS[var.REGION]
   instance_type = "t2.micro"
   #VPC Subnet // #SG //  #SSH public key 
