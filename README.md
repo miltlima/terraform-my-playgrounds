@@ -8,3 +8,4 @@
 * Remote State using S3 Bucket
 * Data source using other regions
 * Labs VPC with NAT on AWS
+* Added EC2 and EBS on VPC with NAT
