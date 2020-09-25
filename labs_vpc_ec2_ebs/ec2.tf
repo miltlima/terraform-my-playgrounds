@@ -7,6 +7,6 @@ resource "aws_instance" "melebesquet" {
   key_name               = var.PATH_TO_PRIVATE_KEY
 
   provisioner "local-exec" {
-    command = "echo ${aws_instance.melebesquet.private_ip} >> hosts.txt"
+    command = "echo ${aws_instance.melebesquet.public_ip} >> hosts.txt"
   }
 }
