@@ -10,3 +10,4 @@
 * Labs VPC with NAT on AWS
 * Added EC2 and EBS on VPC with NAT
 * Added Extra Volume at EC2 instance
+* Using user data to automate mount volumes
