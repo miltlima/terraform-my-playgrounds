@@ -23,3 +23,5 @@ fi
 mkdir -p /data
 echo '/dev/data/volume-extra /data ext4 defaults 0 0' >> /etc/fstab
 mount /data
+
+curl https://get.docker.com | bash
