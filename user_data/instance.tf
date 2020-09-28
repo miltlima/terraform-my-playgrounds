@@ -25,4 +25,5 @@ resource "aws_volume_attachment" "ebs-volume-attachment" {
   device_name = var.INSTANCE_DEVICE_NAME
   volume_id   = aws_ebs_volume.ebs-volume.id
   instance_id = aws_instance.melebesquet.id
+  skip_destroy = true
 }
